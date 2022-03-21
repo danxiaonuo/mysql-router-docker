@@ -115,7 +115,7 @@ RUN set -eux && \
     wget --no-check-certificate https://downloads.percona.com/downloads/Percona-Server-LATEST/Percona-Server-8.0.27-18/binary/debian/buster/x86_64/percona-mysql-router_${MYSQL_VERSION}-1.buster_amd64.deb \
     -O ${DOWNLOAD_SRC}/percona-mysql-router_${MYSQL_VERSION}-1.buster_amd64.deb && \
     # 安装Percona
-    cd ${DOWNLOAD_SRC} && tar xvf Percona-*.tar && dpkg -i ${DOWNLOAD_SRC}/*.deb && \
+    cd ${DOWNLOAD_SRC} && dpkg -i ${DOWNLOAD_SRC}/*.deb && \
     # 删除临时文件
     rm -rf /var/lib/apt/lists/* ${DOWNLOAD_SRC}/*.deb && \
     # 创建mysql相关目录文件并授权
