@@ -71,6 +71,7 @@ ARG PKG_DEPS="\
     psmisc \
     libmecab2 \
     debsums \
+    libgflags-dev \
     libdbd-mysql-perl \
     libcurl4-openssl-dev \
     libev4 \
