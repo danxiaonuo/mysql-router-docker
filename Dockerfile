@@ -24,7 +24,7 @@ ENV DOCKER_IMAGE_TAG=$DOCKER_IMAGE_TAG
 # mysql版本号
 ARG MYSQL_MAJOR=8.0
 ENV MYSQL_MAJOR=$MYSQL_MAJOR
-ARG MYSQL_VERSION=${MYSQL_MAJOR}.27-18
+ARG MYSQL_VERSION=${MYSQL_MAJOR}.29-21
 ENV MYSQL_VERSION=$MYSQL_VERSION
 
 # 工作目录
@@ -115,7 +115,7 @@ RUN set -eux && \
     -O ${DOWNLOAD_SRC}/libperconaserverclient21_${MYSQL_VERSION}-1.focal_amd64.deb && \
     wget --no-check-certificate https://downloads.percona.com/downloads/Percona-Server-LATEST/Percona-Server-${MYSQL_VERSION}/binary/debian/focal/x86_64/libperconaserverclient21-dev_${MYSQL_VERSION}-1.focal_amd64.deb \
     -O ${DOWNLOAD_SRC}/libperconaserverclient21-dev_${MYSQL_VERSION}-1.focal_amd64.deb && \
-    wget --no-check-certificate https://downloads.percona.com/downloads/Percona-Server-LATEST/Percona-Server-8.0.27-18/binary/debian/focal/x86_64/percona-mysql-router_${MYSQL_VERSION}-1.focal_amd64.deb \
+    wget --no-check-certificate https://downloads.percona.com/downloads/Percona-Server-LATEST/Percona-Server-${MYSQL_VERSION}/binary/debian/focal/x86_64/percona-mysql-router_${MYSQL_VERSION}-1.focal_amd64.deb \
     -O ${DOWNLOAD_SRC}/percona-mysql-router_${MYSQL_VERSION}-1.focal_amd64.deb && \
     # 安装Percona
     cd ${DOWNLOAD_SRC} && dpkg -i ${DOWNLOAD_SRC}/*.deb && \
