@@ -140,7 +140,7 @@ HEALTHCHECK \
 EXPOSE 6446 6447 64460 64470
 
 # ***** 入口 *****
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["bash", "-c", "/run.sh"]
 
 # ***** 执行命令 *****
 CMD ["mysqlrouter"]
